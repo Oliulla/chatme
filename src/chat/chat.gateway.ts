@@ -29,4 +29,14 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   handleMessage(@MessageBody() message: string): void {
     this.server.emit('message', message);
   }
+
+  @SubscribeMessage('typing')
+  handleTyping(@MessageBody() data: { username: string }): void {
+    this.server.emit('typing', data);
+  }
+
+  @SubscribeMessage('stopTyping')
+  handleStopTyping(@MessageBody() data: { username: string }): void {
+    this.server.emit('stopTyping', data);
+  }
 }
