@@ -12,6 +12,8 @@ export class ChatService {
   ) {}
 
   async sendMessage(senderId: string, receiverId: string, message: string) {
+    console.log(senderId, receiverId, message);
+
     const sender = await this.userModel.findById(senderId);
     const receiver = await this.userModel.findById(receiverId);
 

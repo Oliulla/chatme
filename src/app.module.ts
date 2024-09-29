@@ -5,6 +5,7 @@ import { ApiConfigModule } from './api-config/api-config.module';
 import { ApiConfigService } from './api-config/api-config.service';
 import { AuthModule } from './auth/auth.module';
 import { ChatModule } from './chat/chat.module';
+import { ChatGateway } from './chat/chat.gateway';
 
 @Module({
   imports: [
@@ -27,7 +28,7 @@ import { ChatModule } from './chat/chat.module';
     ChatModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [ChatGateway],
 })
 export class AppModule {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
