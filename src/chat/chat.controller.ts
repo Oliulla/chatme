@@ -10,7 +10,6 @@ export class ChatController {
     @Param('userId1') userId1: string,
     @Param('userId2') userId2: string,
   ) {
-    console.log(userId1, userId2);
     return this.chatService.getMessagesBetweenUsers(userId1, userId2);
   }
 }
