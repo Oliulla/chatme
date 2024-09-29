@@ -51,7 +51,6 @@ export class ChatService {
           { sender: userId2, receiver: userId1 },
         ],
       })
-      .sort({ timestamp: 1 })
       .exec();
   }
 }
